@@ -1,0 +1,17 @@
+<%= form_with(model: @chat, remote: true) do |form| %>
+  <div class="field">
+    <%= form.label :message %>
+    <%= form.text_field :message %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<% @chats.each do |chat| %>
+  <p><%= chat.message %></p>
+<% end %>
+
+<!-- ここにあたらしいメッセージを追加する -->
+<div id="new_message"></div>
